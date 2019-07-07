@@ -57,8 +57,8 @@ const ATD_DocklessMap = (function() {
     mapOptions: {
       container: "map",
       style: "mapbox://styles/mapbox/light-v9",
-      center: [-97.74, 30.275],
-      zoom: 13,
+      center: [13.409, 52.517],
+      zoom: 12,
       minZoom: 1,
       maxZoom: 19,
       pitch: 15
@@ -151,7 +151,7 @@ const ATD_DocklessMap = (function() {
         docklessMap.url = getUrl(
           e.features,
           docklessMap.flow,
-          docklessMap.mode,
+          //docklessMap.mode,
           docklessMap.startTime,
           docklessMap.endTime
         );
@@ -165,7 +165,7 @@ const ATD_DocklessMap = (function() {
         docklessMap.url = getUrl(
           e.features,
           docklessMap.flow,
-          docklessMap.mode,
+          // docklessMap.mode,
           docklessMap.startTime,
           docklessMap.endTime
         );
@@ -403,7 +403,6 @@ const ATD_DocklessMap = (function() {
           $("#errorModal").modal("show");
           $("#errorModal .modal-body").html(`
             <p>There is not enough data available for the area you selected. Try a bigger shape or pick another point on the map.</p>
-            <p>If the problem persists there may be an error with our server, please <a href="mailto:ATDDataTechnologyServices@austintexas.gov?subject=Bug Report: Dockless Data Explorer">email us</a> or <a href="https://github.com/cityofaustin/dockless/issues/new">create a new issue</a> on our Github repo.</p>
           `);
           return false;
         }
@@ -436,7 +435,6 @@ const ATD_DocklessMap = (function() {
         $("#errorModal .modal-body").html(`
           <p>It seems that we're having trouble getting data from our server at this point in time.</p>
           <p>Please refresh this page and try again.</p>
-          <p>If the problem persists, please <a href="mailto:ATDDataTechnologyServices@austintexas.gov?subject=Bug Report: Dockless Data Explorer">email us</a> or <a href="https://github.com/cityofaustin/dockless/issues/new">create a new issue</a> on our Github repo.</p>
           <h5>Error Message:</h5><code>${error}</code>
         `);
         throw error;
